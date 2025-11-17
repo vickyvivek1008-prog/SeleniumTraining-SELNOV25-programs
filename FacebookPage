@@ -1,0 +1,54 @@
+package week2Day2Homeassignment;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class FacebookPage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://en-gb.facebook.com/");
+		driver.manage().window().maximize();
+		System.out.println(driver.getTitle());
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.findElement(By.linkText("Create new account")).click();
+		driver.findElement(By.name("firstname")).sendKeys("vinod");
+		driver.findElement(By.name("lastname")).sendKeys("vishnu");
+		
+		// Select day dropdown
+        WebElement dayDropdown = driver.findElement(By.id("day"));
+        Select daySelect = new Select(dayDropdown);
+        daySelect.selectByVisibleText("10");
+        
+     // Select month dropdown
+        WebElement  monthDropdown= driver.findElement(By.id("month"));
+        Select monthSelect = new Select(monthDropdown);
+        monthSelect.selectByIndex(11);
+        
+         //year
+        WebElement  yearDropdown= driver.findElement(By.id("year"));
+        Select yearSelect = new Select(yearDropdown);
+        yearSelect.selectByVisibleText("2000");
+        
+        //radio button
+        //// Select Male radio button
+        //driver.findElement(By.xpath("//input[@name='sex' and @value='2']")).click();
+
+        driver.findElement(By.xpath("//label[text()='Male']")).click();
+
+        driver.findElement(By.name("reg_email__")).sendKeys("abcd@gmail.com");
+        driver.findElement(By.id("password_step_input")).sendKeys("viv@1238990");
+        
+        //submit
+        driver.findElement(By.name("websubmit")).click();
+        
+        driver.close();
+
+	}
+
+}
