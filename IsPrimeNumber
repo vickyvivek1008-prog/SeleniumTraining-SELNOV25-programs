@@ -1,0 +1,30 @@
+package testleafCode;
+
+import java.util.Scanner;
+
+public class IsPrimeNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//System.out.print(false);
+		System.out.println("printing all pro]ime and non primes in a given range of numbers");
+		Scanner sc= new Scanner(System.in);
+		int range = sc.nextInt();
+		for(int i=2 ; i< range ;i++)
+		{
+			if(i==2 || i==3)
+			{
+				System.out.println("Is Prime - "+i);
+			}
+		else if(i%2 == 0 || i%3 ==0 || i%5 == 0)
+			{
+				System.out.println("It is not a Prime number - "+i);
+			}
+			else {
+				System.out.println("Prime number - "+ i);
+			}
+		}
+
+	}
+
+}
