@@ -1,0 +1,34 @@
+package testleafCode;
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		long num=sc.nextInt();
+		String str =String.valueOf(num);
+		int len=str.length();
+		long temp =num;
+		long sum=0;
+		while(temp>0)
+		{
+			int rem =(int)temp%10;
+			sum+=(long)Math.pow(rem, len);
+			temp=temp/10;
+		}
+		
+		System.out.println(sum);
+
+		if(sum== num)
+		{
+			System.out.println("Armstrong number");
+		}
+		else
+		{
+			System.out.println("NOt a Amstrong number");
+		}
+	}
+
+}
