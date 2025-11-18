@@ -1,0 +1,13 @@
+package testleafCode;
+
+public class EdgeBrowser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Browser be= new Browser();
+		be.launchBrowser("Edge browser");
+		be.loadUrl();
+
+	}
+
+}
