@@ -1,0 +1,35 @@
+package week3day3;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class DuplicatesArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int[] num={2, 5, 7, 7, 5, 9, 2, 3};
+		 int len=num.length;
+		 Arrays.sort(num);
+		 System.out.println("sorted Array "+Arrays.toString(num));
+		 
+		 for(int i=0 ;i< len-1;i++)
+		 {
+			 if(num[i]==num[i+1])
+			 {
+				 System.out.println("duplicate element "+num[i]);
+				 
+			 }
+			
+		 }
+		 System.out.println(Arrays.toString(num));
+		 Set<Integer> set = new LinkedHashSet<>();
+        for (int i : num) {
+            set.add(i);
+        }
+
+        System.out.println(set);
+
+	}
+
+}
