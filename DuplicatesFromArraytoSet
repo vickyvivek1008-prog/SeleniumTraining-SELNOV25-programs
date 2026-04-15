@@ -1,0 +1,31 @@
+/*
+Do not change the class and method name of this code.
+Do not use TabKey.
+Write your logic after the comment - write your code here
+*/
+import java.util.HashSet;
+public class Solution 
+{
+	public static int[] duplicate(int[] num  ) 
+    {
+      HashSet<Integer> seen = new HashSet<>();
+      HashSet<Integer> duplicates = new HashSet<>();
+      for(int n :num)
+      { 
+        if(!seen.add(n))
+        {
+          duplicates.add(n);
+         }
+      }
+      
+      int[] result = new int[duplicates.size()];
+        int i = 0;
+        for (int val : duplicates) 
+        {
+            result[i++] = val;
+        }
+
+        return result;
+
+	}
+}
